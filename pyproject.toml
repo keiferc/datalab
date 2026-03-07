@@ -1,0 +1,51 @@
+[project]
+name = "datalab"
+version = "0.1.0"
+description = "Sandbox for mini experiments and practice with data tools and techniques"
+authors = [
+    { name = "keiferc", email = "15503711+keiferc@users.noreply.github.com" }
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "jupyterlab>=4.5.5",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.2",
+    "pandas>=3.0.1",
+    "polars[calamine,pandas]>=1.38.1",
+    "scikit-learn>=1.8.0",
+    "seaborn>=0.13.2",
+    "sqlalchemy>=2.0.48",
+    "statsmodels>=0.14.6",
+]
+
+[build-system]
+requires = ["uv_build>=0.10.9,<0.11.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.15.5",
+    "ty>=0.0.21",
+]
+pytorch = [
+    "torch>=2.10.0",
+    "torchvision>=0.25.0",
+]
+tf = [
+    "tensorflow>=2.21.0",
+]
+
+[tool.pytest.ini_options]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\")",
+    "serial",
+]
+addopts = "-v --cov=datalab --cov-branch --cov-report=term-missing"
+
+[tool.coverage.run]
+omit = [ 
+    "__init__.py" # empty files
+]
