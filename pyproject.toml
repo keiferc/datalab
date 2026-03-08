@@ -6,7 +6,7 @@ authors = [
     { name = "keiferc", email = "15503711+keiferc@users.noreply.github.com" }
 ]
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">3.12,<3.13" # limited for tensorflow compatibility
 dependencies = [
     "jupyterlab>=4.5.5",
     "matplotlib>=3.10.8",
@@ -25,6 +25,7 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
+    "pre-commit>=4.5.1",
     "pytest>=9.0.2",
     "pytest-cov>=7.0.0",
     "ruff>=0.15.5",
@@ -46,6 +47,6 @@ markers = [
 addopts = "-v --cov=datalab --cov-branch --cov-report=term-missing"
 
 [tool.coverage.run]
-omit = [ 
+omit = [
     "__init__.py" # empty files
 ]
