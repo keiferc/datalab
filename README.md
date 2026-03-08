@@ -46,6 +46,6 @@ $ uv run jupyter lab
 - Manage dependencies with `uv` (e.g., `uv add polars`)
 - Verify types with `ty` (e.g., `uv run ty check`)
 - Use `pytest` for tests (e.g., `uv run pytest`)
-- Ensure style compliance with `ruff` (e.g., `uv run ruff check --fix`)
+- Ensure style compliance with `ruff` (e.g., `uv run ruff check --fix`, `uv run ruff format`)
 - Containerize releases with Docker
 - Submit pull requests to `dev`
