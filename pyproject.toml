@@ -9,6 +9,7 @@ readme = "README.md"
 requires-python = ">3.12,<3.13" # limited for tensorflow compatibility
 dependencies = [
     "datasets>=4.6.1",
+    "ipywidgets>=8.1.8",
     "jupyterlab>=4.5.5",
     "matplotlib>=3.10.8",
     "numpy>=2.4.2",
