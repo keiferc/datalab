@@ -27,7 +27,7 @@ $ docker run -p 8888:8888 datalab:latest
 ```bash
 $ uv python install 3.12 # if necessary
 $ uv sync
-$ pre-commit autoupdate --repo https://github.com/pre-commit/pre-commit-hooks
+$ uv run pre-commit autoupdate
 $ uv run pre-commit install
 ```
 
