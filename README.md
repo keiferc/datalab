@@ -25,17 +25,20 @@ $ docker run -p 8888:8888 datalab:latest
 
 ### Installation
 ```bash
-uv sync
+$ uv python install 3.12 # if necessary
+$ uv sync
+$ uv run pre-commit autoupdate
+$ uv run pre-commit install
 ```
 
 Deep learning dependencies are kept separate to reduce installation size and prevent
-conflicts. To install Tensorflow, use `uv sync --group tf`. To install Pytorch, use 
-`uv sync --group pytorch`. Remember to adjust the Dockerfile to include the relevant 
+conflicts. To install Tensorflow, use `uv sync --group tf`. To install Pytorch, use
+`uv sync --group pytorch`. Remember to adjust the Dockerfile to include the relevant
 dependency groups.
 
 ### Usage
 ```bash
-uv run jupyter lab
+$ uv run jupyter lab
 ```
 
 ### Guidelines
@@ -44,6 +47,6 @@ uv run jupyter lab
 - Manage dependencies with `uv` (e.g., `uv add polars`)
 - Verify types with `ty` (e.g., `uv run ty check`)
 - Use `pytest` for tests (e.g., `uv run pytest`)
-- Ensure style compliance with `ruff` (e.g., `uv run ruff check --fix`)
+- Ensure style compliance with `ruff` (e.g., `uv run ruff check --fix`, `uv run ruff format`)
 - Containerize releases with Docker
 - Submit pull requests to `dev`
