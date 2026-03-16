@@ -6,15 +6,17 @@ authors = [
     { name = "keiferc", email = "15503711+keiferc@users.noreply.github.com" }
 ]
 readme = "README.md"
-requires-python = ">3.12,<3.13" # limited for tensorflow compatibility
+requires-python = ">=3.13" # limited for tensorflow compatibility
 dependencies = [
     "datasets>=4.6.1",
     "ipywidgets>=8.1.8",
     "jupyterlab>=4.5.5",
     "matplotlib>=3.10.8",
+    "mlflow>3.0",
     "numpy>=2.4.2",
-    "pandas>=3.0.1",
+    "pandas<3.0",
     "polars[calamine,pandas]>=1.38.1",
+    "protobuf<7",
     "scikit-learn>=1.8.0",
     "seaborn>=0.13.2",
     "sqlalchemy>=2.0.48",
@@ -38,7 +40,7 @@ pytorch = [
     "torchvision>=0.25.0",
 ]
 tf = [
-    "tensorflow>=2.21.0",
+    "tensorflow>=2.21.0; python_version<'3.13'",
 ]
 
 [tool.pytest.ini_options]
